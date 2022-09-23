@@ -19,9 +19,11 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import MomentsController from 'App/Controllers/Http/MomentsController'
 
 Route.group(() => {
   Route.get('/', async () => {
     return { hello: 'world' }
   })
+  Route.resource('/moments', 'MomentsController').apiOnly()
 }).prefix('/api')
